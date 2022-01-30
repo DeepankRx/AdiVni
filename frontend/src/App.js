@@ -258,7 +258,7 @@ function App() {
         </main>
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>H&C Fashion &copy;</div>{' '}
+          <div>AdiVni &copy;</div>{' '}
         </footer>
       </div>
     </BrowserRouter>

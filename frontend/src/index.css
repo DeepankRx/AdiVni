@@ -30,17 +30,19 @@ body {
 }
 
 @media only screen and (max-width:800px) {
+
   /* .grid-container {
     grid-template-rows: 11rem 1fr 5rem
   } */
   .search input {
-    display:none;
+    display: none;
   }
+
   .search button {
-    display:none;
+    display: none;
   }
-  .logo
-  {
+
+  .logo {
     width: 200px;
   }
 }
@@ -84,7 +86,7 @@ a {
 }
 
 a:hover {
-  color: #4c6cec;
+  /* color: #73ff00; */
   -webkit-transform: scale(1.07);
   transform: scale(1.07);
   /* font-size: 2rem; */
@@ -206,7 +208,7 @@ aside {
   position: fixed;
   width: 30rem;
   height: 100%;
-  background-image: linear-gradient(to bottom, #7aa2ec, #2590b1, #333335);
+  background-image: linear-gradient(143deg, #7a9cc3, #c1deae, #c1deae);
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1000;
@@ -290,7 +292,7 @@ ul.images button {
 
 /* Card */
 .card {
-   border: 0.1rem #615c5c solid;
+  border: 0.1rem #615c5c solid;
   /* background-color: #f8f8f8;  */
   border-radius: 0.5rem;
   margin: 1rem;
@@ -390,7 +392,7 @@ a>.rating>span:last-child {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-image: linear-gradient(to bottom, #010f94, #0416b6, #0010a1);
+  background-image: linear-gradient(to top, #40ac99, #40ac99);
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
@@ -440,7 +442,7 @@ a>.rating>span:last-child {
 /* Carousel */
 .carousel .slide img {
   /* max-width: 30rem; */
-  height:50rem;
+  height: 50rem;
 }
 
 .carousel.carousel-slider .control-arrow,
@@ -970,7 +972,7 @@ a>.rating>span:last-child {
   height: 60px;
   position: sticky;
   top: 25px;
-  width:250px;
+  width: 250px;
 }
 
 .row-div {
@@ -980,8 +982,8 @@ a>.rating>span:last-child {
 .strong {
   color: white;
 }
-.collection
-{
-  font-size:2.6rem;
+
+.collection {
+  font-size: 2.6rem;
   text-align: center;
 }
