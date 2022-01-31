@@ -64,8 +64,9 @@ function App() {
             >
               <i className="fa fa-bars bars"></i>
             </button>
-            <Link className="brand font12" to="/">
-                <img className="logo" src="images/logo1.png" alt="logo"/>
+            <Link className="brand font12 samarkan"  to="/">
+                {/* <img className="logo" src="images/logo1.png" alt="logo"/> */}
+               AdiVni Nature
             </Link>
           </div>
           <div>
@@ -171,7 +172,7 @@ function App() {
                   >
                     <button className="bbutton">{c}</button>
                   </Link>
-                  <i class="fa fa-arrow-right"></i>
+                  <i className="fa fa-arrow-right"></i>
                 </li>
               ))
             )}
