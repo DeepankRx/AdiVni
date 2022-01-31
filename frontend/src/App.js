@@ -75,7 +75,7 @@ function App() {
               )}
             ></Route>
           </div>
-          <div>
+          <div className="responsive-details-header">
             <Link to="/cart">
             <i className="fa fa-shopping-cart cart"></i>
               {cartItems.length > 0 && (
