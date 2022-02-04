@@ -24,7 +24,7 @@
     "multer": "^1.4.2",
     "paytm_allinone_react-native": "^1.0.9",
     "razorpay": "^2.0.6",
-    "react-native-razorpay": "^2.2.7",
+    "react-native-razorpay": "^2.2.8",
     "socket.io": "^4.0.1"
   },
   "devDependencies": {
