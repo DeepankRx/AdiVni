@@ -1,7 +1,6 @@
 import React from "react";
 import styles from '../TestimonialsBox.module.css';
-import TestimonialsBox from "../TestimonialsBox";
-// import developer from '../../images/about_the_developer.jpeg'
+import TestimonialsBox from "../TestimonialsBox.js";
 
 const Testimonials = () => {
 
