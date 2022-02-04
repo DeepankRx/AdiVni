@@ -32,6 +32,7 @@ import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
 
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -257,6 +258,7 @@ function App() {
 
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
+      
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
           <div>AdiVni &copy;</div>{' '}
