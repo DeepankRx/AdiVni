@@ -31,7 +31,7 @@ import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
-
+import Footer from './screens/FooterScreen'
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -106,6 +106,42 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            <div className="dropdown">
+            <Link >
+                      Categories  <i className="fa fa-caret-down"></i>
+                    </Link>
+            <ul className="dropdown-content">
+            <li>
+
+              {/* <strong className="strong">Categories</strong> */}
+              {/* <button
+                onClick={() => setSidebarIsOpen(false)}
+                className="close-sidebar"
+                type="button"
+              >
+                <i className="fa fa-close"></i>
+              </button> */}
+            </li>
+            {loadingCategories ? (
+              <LoadingBox></LoadingBox>
+            ) : errorCategories ? (
+              <MessageBox variant="danger">{errorCategories}</MessageBox>
+            ) : (
+              categories.map((c) => (
+                
+                <li key={c}>
+                  <Link
+                    to={`/search/category/${c}`}
+                    onClick={() => setSidebarIsOpen(false)}
+                  >
+                    <li className="dropdown-content">{c}</li>
+                  </Link>
+               
+                </li>
+              ))
+            )}
+          </ul>
+            </div>
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -121,6 +157,13 @@ function App() {
                 </ul>
               </div>
             )}
+
+
+
+
+
+
+            
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -147,7 +190,7 @@ function App() {
             )}
           </div>
         </header>
-        <aside className={sidebarIsOpen ? 'open' : ''}>
+        {/* <aside className={sidebarIsOpen ? 'open' : ''}>
           <ul className="categories">
             <li>
               <strong className="strong">Categories</strong>
@@ -178,7 +221,7 @@ function App() {
               ))
             )}
           </ul>
-        </aside>
+        </aside> */}
         <main>
           <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
@@ -259,10 +302,13 @@ function App() {
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
       
-        <footer className="row center">
+        {/* <footer className="row-footer"> */}
+        <Footer>
+
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>AdiVni &copy;</div>{' '}
-        </footer>
+         <h3>Contacts</h3>
+        {/* </footer> */}
+        </Footer>
       </div>
     </BrowserRouter>
   );
