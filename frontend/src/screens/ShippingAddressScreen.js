@@ -49,21 +49,6 @@ export default function ShippingAddressScreen(props) {
       props.history.push('/payment');
     }
   };
-  const chooseOnMap = () => {
-    dispatch(
-      saveShippingAddress({
-        fullName,
-        address,
-        city,
-        phone,
-        postalCode,
-        country,
-        lat,
-        lng,
-      })
-    );
-    props.history.push('/map');
-  };
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>

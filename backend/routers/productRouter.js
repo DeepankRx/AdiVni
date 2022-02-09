@@ -113,6 +113,7 @@ productRouter.post(
       seller: req.user._id,
       image: '/images/p1.jpg',
       price: 0,
+      size:500,
       category: 'sample category',
       brand: 'sample brand',
       countInStock: 0,
@@ -135,6 +136,8 @@ productRouter.put(
       product.name = req.body.name;
       product.price = req.body.price;
       product.image = req.body.image;
+      product.size = req.body.size;
+      product.sizeArr = req.body.sizeArr;
       product.images = req.body.images;
       product.category = req.body.category;
       product.brand = req.body.brand;

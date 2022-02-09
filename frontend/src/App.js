@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './actions/userActions';
@@ -35,7 +35,6 @@ import Footer from './screens/FooterScreen'
 
 function App() {
   const cart = useSelector((state) => state.cart);
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -58,13 +57,7 @@ function App() {
       <div className="grid-container">
         <header className="row">
           <div className="row-div">
-            <button
-              type="button"
-              className="open-sidebar"
-              onClick={() => setSidebarIsOpen(true)}
-            >
-              <i className="fa fa-bars bars"></i>
-            </button>
+
             <Link className="brand font12 samarkan"  to="/">
                 {/* <img className="logo" src="images/logo1.png" alt="logo"/> */}
                AdiVni Nature
@@ -111,17 +104,6 @@ function App() {
                       Categories  <i className="fa fa-caret-down"></i>
                     </Link>
             <ul className="dropdown-content">
-            <li>
-
-              {/* <strong className="strong">Categories</strong> */}
-              {/* <button
-                onClick={() => setSidebarIsOpen(false)}
-                className="close-sidebar"
-                type="button"
-              >
-                <i className="fa fa-close"></i>
-              </button> */}
-            </li>
             {loadingCategories ? (
               <LoadingBox></LoadingBox>
             ) : errorCategories ? (
@@ -131,9 +113,7 @@ function App() {
                 
                 <li key={c}>
                   <Link
-                    to={`/search/category/${c}`}
-                    onClick={() => setSidebarIsOpen(false)}
-                  >
+                    to={`/search/category/${c}`}>
                     <li className="dropdown-content">{c}</li>
                   </Link>
                
@@ -190,38 +170,6 @@ function App() {
             )}
           </div>
         </header>
-        {/* <aside className={sidebarIsOpen ? 'open' : ''}>
-          <ul className="categories">
-            <li>
-              <strong className="strong">Categories</strong>
-              <button
-                onClick={() => setSidebarIsOpen(false)}
-                className="close-sidebar"
-                type="button"
-              >
-                <i className="fa fa-close"></i>
-              </button>
-            </li>
-            {loadingCategories ? (
-              <LoadingBox></LoadingBox>
-            ) : errorCategories ? (
-              <MessageBox variant="danger">{errorCategories}</MessageBox>
-            ) : (
-              categories.map((c) => (
-                
-                <li key={c}>
-                  <Link
-                    to={`/search/category/${c}`}
-                    onClick={() => setSidebarIsOpen(false)}
-                  >
-                    <button className="bbutton">{c}</button>
-                  </Link>
-                  <i className="fa fa-arrow-right"></i>
-                </li>
-              ))
-            )}
-          </ul>
-        </aside> */}
         <main>
           <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
