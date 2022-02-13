@@ -10,8 +10,6 @@ export default function ProductEditScreen(props) {
   const productId = props.match.params.id;
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
-  const [size, setSize] = useState('');
-  const [sizeArr, setSizeArr] = useState([]);
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
   const [category, setCategory] = useState('');
@@ -40,7 +38,6 @@ export default function ProductEditScreen(props) {
     } else {
       setName(product.name);
       setPrice(product.price);
-      setSizeArr(product.sizeArr);
       setImage(product.image);
       setImages(product.images);
       setCategory(product.category);
@@ -53,15 +50,11 @@ export default function ProductEditScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     // TODO: dispatch update product
-    setSizeArr(...sizeArr,sizeArr.push(size));
-    console.log(sizeArr);
     dispatch(
       updateProduct({
         _id: productId,
         name,
         price,
-        size,
-        sizeArr,
         image,
         images,
         category,
@@ -102,10 +95,7 @@ export default function ProductEditScreen(props) {
   const deleteImages =()=>{
     setImages([]);
   }
-  const deleteSizes =()=>{
-    setSizeArr([]);
-  }
-  const sizeArr1 = Object.values(sizeArr);
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -139,31 +129,6 @@ export default function ProductEditScreen(props) {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></input>
-            </div>
-            <div>
-              <label htmlFor="Size">Sizes</label>
-            <div>
-
-            <ul>
-              {sizeArr1.length === 0 && <li>No size added</li>}
-              {
-                sizeArr1.map((size,index)=>{
-                  return <li key={index}>{size}</li>
-                }
-                )
-              }
-                
-            </ul>
-            <br/>
-              <input
-                id="size"
-                type="text"
-                placeholder="Enter Size"  
-                onChange={(e) => setSize(e.target.value)}
-              ></input>
-            </div>
-            <br></br>
-            <button className="danger" onClick={() => deleteSizes()}>Delete All Sizes</button>
             </div>
             <div>
               <label htmlFor="image">Image</label>

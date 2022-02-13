@@ -1,4 +1,5 @@
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
+import {createContext} from 'react';
 import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/cartReducers';
 import {
@@ -33,10 +34,11 @@ import {
   userUpdateReducer,
 } from './reducers/userReducers';
 
+export const Store = createContext();
 const initialState = {
   userSignin: {
     userInfo: localStorage.getItem('userInfo')
-      ? JSON.parse(localStorage.getItem('userInfo'))
+    ? JSON.parse(localStorage.getItem('userInfo'))
       : null,
   },
   cart: {
